@@ -1,5 +1,6 @@
 package ru.yandex.praktikum;
 
+import com.example.Feline;
 import com.example.Lion;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,7 +12,7 @@ import static org.junit.Assert.*;
 
 public class LionTest {
 
-
+    Feline feline;
     private final String sex ;
     private final boolean expected;
 
@@ -33,7 +34,7 @@ public class LionTest {
     @Test
     public void doesHaveMane() throws Exception {
 
-            Lion lion = new Lion(sex);
+            Lion lion = new Lion(sex, feline);
             boolean actual = lion.doesHaveMane();
             assertEquals(expected, actual);
             System.out.println("doesHaveMane? : "+actual);
@@ -41,13 +42,12 @@ public class LionTest {
     }
 
 
-
     @Test
     public void shouldBeUnknownSex()  {
 
  Exception exception = null;
         try {
-            Lion lion = new Lion("");
+            Lion lion = new Lion("", feline);
            lion.doesHaveMane();
         } catch (Exception ex) {
             exception = ex;
