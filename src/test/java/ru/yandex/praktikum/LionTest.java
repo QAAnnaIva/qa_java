@@ -45,7 +45,7 @@ public class LionTest {
     @Test
     public void shouldBeUnknownSex()  {
 
- Exception exception = null;
+    Exception exception = null;
         try {
             Lion lion = new Lion("", feline);
            lion.doesHaveMane();
@@ -57,10 +57,6 @@ public class LionTest {
         assertEquals("Используйте допустимые значения пола животного - самец или самка",exception.getMessage());
         System.out.println(exception.getMessage());
     }
-
-
-
-
 
 
 
